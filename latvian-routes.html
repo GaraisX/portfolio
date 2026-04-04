@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LatvianRoutes — Andris Vītoliņš</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,300;0,400;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+
+    /* ── RESET ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Playfair Display', serif;
+      color: #c8e6c9;
+      background-color: #0b1e12;
+    }
+
+    /* ── BACKGROUND ── */
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image: url('assets/images/LatvianRoutes1.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      background: rgba(11, 30, 18, 0.78);
+    }
+
+    /* ── NAV ── */
+    .main-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 2.5rem;
+      z-index: 100;
+      background: none;
+      border: none;
+    }
+
+    .nav-name {
+      font-family: 'Space Mono', monospace;
+      font-size: 26px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-name:hover { color: #c8e6c9; }
+
+    .nav-lang {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .lang-sep {
+      color: rgba(255,255,255,0.25);
+      font-size: 1.5rem;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Space Mono', monospace;
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.12em;
+      padding: 0.25rem 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .lang-btn.active { color: rgba(255, 255, 255, 0.85); }
+    .lang-btn:hover:not(.active) { color: rgba(255,255,255,0.7); }
+
+    /* ── PAGE CONTENT ── */
+    .page-content {
+      position: relative;
+      z-index: 10;
+      padding-top: 120px;
+      padding-bottom: 80px;
+    }
+
+    /* ── HERO TEXT ── */
+    .hero-text {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .hero-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 300;
+      color: #c8e6c9;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      line-height: 1.15;
+      margin-bottom: 2.4rem;
+    }
+
+    .hero-desc {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+      font-weight: 300;
+      line-height: 1.95;
+      color: rgba(200, 230, 201, 0.82);
+      letter-spacing: 0.01em;
+      text-align: left;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 820px;
+      margin: 3.5rem auto;
+      padding: 0 2rem;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(106, 191, 105, 0.2);
+    }
+
+    .divider-symbol {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      color: rgba(106, 191, 105, 0.45);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    /* ── BUTTONS ── */
+    .links-section {
+      text-align: center;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #6abf69;
+      text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid rgba(106, 191, 105, 0.45);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+      background: rgba(11, 30, 18, 0.4);
+    }
+
+    .btn:hover {
+      background: rgba(106, 191, 105, 0.12);
+      border-color: #6abf69;
+      color: #c8e6c9;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="bg-layer"></div>
+  <div class="bg-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <a class="nav-name" href="index.html">Andris "Garais" Vītoliņš</a>
+    <div class="nav-lang">
+      <button class="lang-btn active" data-lang="lv">LV</button>
+      <span class="lang-sep">/</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="page-content">
+
+    <section class="hero-text">
+      <h1 class="hero-title">
+        <span data-lv="LatvianRoutes" data-en="LatvianRoutes">LatvianRoutes</span>
+      </h1>
+      <p class="hero-desc">
+        <span data-lv="LatvianRoutes ir pirmā Latvijā izveidotā digitālo maršrutu aplikācija — ideja, kas radās no pārliecības, ka ceļošana nav sacensība par ātrumu vai attālumu, bet gan iespēja iepazīt jaunas vietas, sajust ainavu un uzzināt stāstus, ko tā glabā. Viss risinājums — no idejas līdz ieviešanai — ir manas un manas komandas darba rezultāts. Aplikācijā pieejami vairāk nekā 250 maršrutu pārgājieniem, velo un auto braucieniem visā Baltijā. Katram maršrutam ir savs apraksts, interaktīvs ceļvedis un lokācijas norādes — jo informācija un konteksts ir tikpat svarīgi kā pats ceļš. Ar aplikācijas atbalstu ir realizēti vairāki lieli projekti: Latvijas Izaicinājums (četras sezonas), LIAA PievelcLatviju tuvplānā (divas sezonas), Baldones dabas apļi, BeActive pārgājieni un EXIT RĪGA ripo."
+              data-en="LatvianRoutes is the first digital route application created in Latvia — an idea born from the belief that travel is not a race for speed or distance, but an opportunity to discover new places, feel the landscape, and learn the stories it holds. The entire solution — from concept to implementation — is the result of my work and the work of my team. The application offers more than 250 routes for hiking, cycling, and driving across the Baltics. Each route has its own description, interactive guide, and location directions — because information and context matter just as much as the journey itself. Several major projects have been realised with the application: Latvijas Izaicinājums (four seasons), LIAA PievelcLatviju tuvplānā (two seasons), Baldone Nature Circles, BeActive hikes, and EXIT RĪGA ripo.">
+          LatvianRoutes ir pirmā Latvijā izveidotā digitālo maršrutu aplikācija — ideja, kas radās no pārliecības, ka ceļošana nav sacensība par ātrumu vai attālumu, bet gan iespēja iepazīt jaunas vietas, sajust ainavu un uzzināt stāstus, ko tā glabā. Viss risinājums — no idejas līdz ieviešanai — ir manas un manas komandas darba rezultāts. Aplikācijā pieejami vairāk nekā 250 maršrutu pārgājieniem, velo un auto braucieniem visā Baltijā. Katram maršrutam ir savs apraksts, interaktīvs ceļvedis un lokācijas norādes — jo informācija un konteksts ir tikpat svarīgi kā pats ceļš. Ar aplikācijas atbalstu ir realizēti vairāki lieli projekti: Latvijas Izaicinājums (četras sezonas), LIAA PievelcLatviju tuvplānā (divas sezonas), Baldones dabas apļi, BeActive pārgājieni un EXIT RĪGA ripo.
+        </span>
+      </p>
+    </section>
+
+    <div class="divider">
+      <span class="divider-symbol">57°N / 25°E</span>
+    </div>
+
+    <section class="links-section">
+      <a class="btn" href="mailto:vi@vivasolutions.lv">
+        <span data-lv="Sazināties →" data-en="Get in touch →">Sazināties →</span>
+      </a>
+      <a class="btn" href="https://latvianroutes.com" target="_blank" rel="noopener">
+        <span data-lv="Apmeklēt LatvianRoutes →" data-en="Visit LatvianRoutes →">Apmeklēt LatvianRoutes →</span>
+      </a>
+    </section>
+
+  </main>
+
+  <script>
+    const langBtns = document.querySelectorAll('.lang-btn');
+    let currentLang = 'lv';
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        if (lang === currentLang) return;
+        currentLang = lang;
+        langBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('[data-lv][data-en]').forEach(el => {
+          el.textContent = el.dataset[lang];
+        });
+        document.documentElement.lang = lang;
+      });
+    });
+  </script>
+
+</body>
+</html>
