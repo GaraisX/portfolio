@@ -280,6 +280,31 @@
 
     .btn-trigger { cursor: pointer; }
 
+    .site-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      padding: 0.5rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.3);
+      background: transparent;
+      pointer-events: none;
+    }
+    .site-footer a {
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      pointer-events: all;
+      transition: color 0.2s;
+    }
+    .site-footer a:hover { color: rgba(255,255,255,0.6); }
+
     @media (max-width: 768px) {
       .main-nav { height: 36px; padding: 0 1rem; }
       .nav-name { font-size: 8px; }
@@ -418,6 +443,11 @@
     </section>
 
   </main>
+
+  <footer class="site-footer">
+    <span>© 2025 Andris Vītoliņš</span>
+    <span>Izstrādāja <a href="https://vivasolutions.lv" target="_blank" rel="noopener">VIVA Solutions, SIA</a> &amp; Klāvs</span>
+  </footer>
 
   <!-- Contact Modal -->
   <div class="modal-backdrop" id="contactModal" onclick="handleBackdropClick(event)">
