@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT biznesa procesa analītiķis — Andris Vītoliņš</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+
+    /* ── RESET ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Cormorant Garamond', serif;
+      color: #cee4f5;
+      background-color: #091525;
+    }
+
+    /* ── BACKGROUND ── */
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image: url('assets/images/analitic1.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      background: rgba(9, 21, 37, 0.78);
+    }
+
+    /* ── NAV ── */
+    .main-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 2.5rem;
+      z-index: 100;
+      background: none;
+      border: none;
+    }
+
+    .nav-name {
+      font-family: 'Space Mono', monospace;
+      font-size: 26px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-name:hover { color: #cee4f5; }
+
+    .nav-lang {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .lang-sep {
+      color: rgba(255,255,255,0.25);
+      font-size: 1.5rem;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Space Mono', monospace;
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.12em;
+      padding: 0.25rem 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .lang-btn.active { color: rgba(255, 255, 255, 0.85); }
+    .lang-btn:hover:not(.active) { color: rgba(255,255,255,0.7); }
+
+    /* ── PAGE CONTENT ── */
+    .page-content {
+      position: relative;
+      z-index: 10;
+      padding-top: 120px;
+      padding-bottom: 80px;
+    }
+
+    /* ── HERO TEXT ── */
+    .hero-text {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .hero-title {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(1.4rem, 2.8vw, 2.4rem);
+      font-weight: 700;
+      color: #cee4f5;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 2.4rem;
+      text-transform: uppercase;
+    }
+
+    .hero-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+      font-weight: 300;
+      line-height: 1.95;
+      color: rgba(206, 228, 245, 0.80);
+      letter-spacing: 0.01em;
+      text-align: left;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      text-align: center;
+      margin: 3.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 2rem;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(79, 195, 247, 0.2);
+    }
+
+    .divider-symbol {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      color: rgba(79, 195, 247, 0.4);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    /* ── LINKS / BUTTONS ── */
+    .links-section {
+      text-align: center;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      color: #4fc3f7;
+      text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid rgba(79, 195, 247, 0.45);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+      background: rgba(9, 21, 37, 0.4);
+    }
+
+    .btn:hover {
+      background: rgba(79, 195, 247, 0.12);
+      border-color: #4fc3f7;
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="bg-layer"></div>
+  <div class="bg-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <a class="nav-name" href="index.html">Andris "Garais" Vītoliņš</a>
+    <div class="nav-lang">
+      <button class="lang-btn active" data-lang="lv">LV</button>
+      <span class="lang-sep">/</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="page-content">
+
+    <section class="hero-text">
+      <h1 class="hero-title">
+        <span data-lv="IT biznesa procesa analītiķis" data-en="IT Business Process Analyst">IT biznesa procesa analītiķis</span>
+      </h1>
+      <p class="hero-desc">
+        <span data-lv="Divdesmit gadu laikā esmu strādājis tur, kur biznesa vajadzības satiekas ar tehnoloģiju iespējām. Mans darbs ir tulkot — pārvērst iestāžu un uzņēmumu vajadzības precīzās tehniskajās prasībās, sarežģītus procesus skaidrās diagrammās un nestrukturētas idejas dokumentos, kas kļūst par sistēmu pamatu. Esmu strādājis ar Valsts ieņēmumu dienesta deklarāciju apstrādes sistēmām, tiesu administrācijas juridiskās informācijas pārvaldību, Latvijas bibliotēku sistēmas kopkataloga koncepciju, bezpilota gaisa kuģu pārvaldību, RSU universitātes IT sistēmām, LMT e-komercijas platformu un tūrisma maršrutu digitalizāciju. Katrs projekts — savs valodas kods, sava loģika, savi cilvēki. Tomēr visstiprāk mani aizrauj nestandarta situācijas — uzdevumi, kuriem nav gatavu atbilžu un kur risinājums jāizdomā no jauna."
+              data-en="Over twenty years I have worked where business needs meet technological possibilities. My work is translation — turning institutional and corporate needs into precise technical requirements, complex processes into clear diagrams, and unstructured ideas into documents that become the foundation of systems. I have worked with the State Revenue Service declaration processing systems, judicial administration legal information management, the Latvian library system union catalogue concept, unmanned aerial vehicle management, RSU university IT systems, LMT e-commerce platforms, and digital tourism route development. Each project has its own language, its own logic, its own people. Yet what drives me most are non-standard situations — tasks without ready-made answers, where the solution must be invented from scratch.">
+          Divdesmit gadu laikā esmu strādājis tur, kur biznesa vajadzības satiekas ar tehnoloģiju iespējām. Mans darbs ir tulkot — pārvērst iestāžu un uzņēmumu vajadzības precīzās tehniskajās prasībās, sarežģītus procesus skaidrās diagrammās un nestrukturētas idejas dokumentos, kas kļūst par sistēmu pamatu. Esmu strādājis ar Valsts ieņēmumu dienesta deklarāciju apstrādes sistēmām, tiesu administrācijas juridiskās informācijas pārvaldību, Latvijas bibliotēku sistēmas kopkataloga koncepciju, bezpilota gaisa kuģu pārvaldību, RSU universitātes IT sistēmām, LMT e-komercijas platformu un tūrisma maršrutu digitalizāciju. Katrs projekts — savs valodas kods, sava loģika, savi cilvēki. Tomēr visstiprāk mani aizrauj nestandarta situācijas — uzdevumi, kuriem nav gatavu atbilžu un kur risinājums jāizdomā no jauna.
+        </span>
+      </p>
+    </section>
+
+    <div class="divider">
+      <span class="divider-symbol">// end_of_brief //</span>
+    </div>
+
+    <section class="links-section">
+      <a class="btn" href="mailto:vi@vivasolutions.lv">
+        <span data-lv="Sazināties →" data-en="Get in touch →">Sazināties →</span>
+      </a>
+    </section>
+
+  </main>
+
+  <script>
+    const langBtns = document.querySelectorAll('.lang-btn');
+    let currentLang = 'lv';
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        if (lang === currentLang) return;
+        currentLang = lang;
+        langBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('[data-lv][data-en]').forEach(el => {
+          el.textContent = el.dataset[lang];
+        });
+        document.documentElement.lang = lang;
+      });
+    });
+  </script>
+
+</body>
+</html>
