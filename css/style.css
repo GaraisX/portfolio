@@ -448,6 +448,21 @@ html, body {
 @media (max-width: 768px) {
   html, body { overflow: auto; }
 
+  .main-nav {
+    height: 36px;
+    padding: 0 1rem;
+  }
+
+  .nav-name {
+    font-size: 8px;
+  }
+
+  .nav-lang,
+  .lang-btn,
+  .lang-sep {
+    font-size: 8px;
+  }
+
   .panels-container {
     flex-direction: column;
     height: auto;
@@ -455,7 +470,8 @@ html, body {
 
   .panel {
     flex: none !important;
-    height: 100svh;
+    width: 100%;
+    height: 248px;
     transition: none;
   }
 
@@ -471,13 +487,10 @@ html, body {
     left: 0;
   }
 
-  .panel__content {
-    max-height: 320px;
-    opacity: 1;
-  }
-
-  .panel__title {
-    margin-bottom: 1.6rem;
+  .panel__header {
+    font-size: 1.1rem;
+    padding-top: 56px;
+    text-align: center;
   }
 
   .panel__bg-text {
