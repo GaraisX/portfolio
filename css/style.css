@@ -265,7 +265,7 @@ html, body {
 }
 
 .panel__header--analyst {
-  font-family: 'Cormorant SC', serif;
+  font-family: 'Space Mono', monospace;
   font-weight: 400;
   color: #ffffff;
   letter-spacing: 0.05em;
@@ -279,11 +279,10 @@ html, body {
 }
 
 .panel__header--routes {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
   color: #c8e6c9;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 
