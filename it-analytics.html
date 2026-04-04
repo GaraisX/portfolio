@@ -313,7 +313,7 @@
       <div class="modal-title">Kontakti</div>
       <ul class="modal-contacts">
         <li><a href="tel:+37126154901"><i class="fa fa-phone"></i> +371 26154901</a></li>
-        <li><a href="mailto:andris.g.vitolins@gmail.com"><i class="fa fa-envelope"></i> andris.g.vitolins@gmail.com</a></li>
+        <li><a href="mailto:andris.g.vitolins@gmail.com" onclick="window.open(this.href); return false;"><i class="fa fa-envelope"></i> andris.g.vitolins@gmail.com</a></li>
         <li><a href="https://www.linkedin.com/in/andris-vitolins-b42136194/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
       </ul>
     </div>
@@ -337,10 +337,17 @@
       });
     });
 
-    function openModal() { document.getElementById('contactModal').classList.add('open'); }
-    function closeModal() { document.getElementById('contactModal').classList.remove('open'); }
+    function onEscKey(e) { if (e.key === 'Escape') closeModal(); }
+    function openModal() {
+      document.getElementById('contactModal').classList.add('open');
+      document.removeEventListener('keydown', onEscKey);
+      document.addEventListener('keydown', onEscKey);
+    }
+    function closeModal() {
+      document.getElementById('contactModal').classList.remove('open');
+      document.removeEventListener('keydown', onEscKey);
+    }
     function handleBackdropClick(e) { if (e.target === e.currentTarget) closeModal(); }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 
 </body>

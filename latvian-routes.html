@@ -311,7 +311,7 @@
       <div class="modal-title">Kontakti</div>
       <ul class="modal-contacts">
         <li><a href="tel:+37120008768"><i class="fa fa-phone"></i> +371 20008768</a></li>
-        <li><a href="mailto:info@latvianroutes.com"><i class="fa fa-envelope"></i> info@latvianroutes.com</a></li>
+        <li><a href="mailto:info@latvianroutes.com" onclick="window.open(this.href); return false;"><i class="fa fa-envelope"></i> info@latvianroutes.com</a></li>
         <li><a href="https://www.instagram.com/latvian_routes/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
         <li><a href="https://www.facebook.com/latvianroutesapp" target="_blank" rel="noopener"><i class="fab fa-facebook"></i> Facebook</a></li>
       </ul>
@@ -336,10 +336,17 @@
       });
     });
 
-    function openModal() { document.getElementById('contactModal').classList.add('open'); }
-    function closeModal() { document.getElementById('contactModal').classList.remove('open'); }
+    function onEscKey(e) { if (e.key === 'Escape') closeModal(); }
+    function openModal() {
+      document.getElementById('contactModal').classList.add('open');
+      document.removeEventListener('keydown', onEscKey);
+      document.addEventListener('keydown', onEscKey);
+    }
+    function closeModal() {
+      document.getElementById('contactModal').classList.remove('open');
+      document.removeEventListener('keydown', onEscKey);
+    }
     function handleBackdropClick(e) { if (e.target === e.currentTarget) closeModal(); }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 
 </body>
