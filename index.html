@@ -3,54 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | garaisvitolins</title>
+  <title>Garais Vitolins</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#about">Par mani</a></li>
-        <li><a href="#projects">Projekti</a></li>
-        <li><a href="#contact">Kontakti</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section id="hero">
-      <h1>Sveiki, es esmu <span class="highlight">garaisvitolins</span></h1>
-      <p>Web izstrādātājs</p>
-    </section>
+  <nav class="main-nav">
+    <div class="nav-logo">GV</div>
+    <div class="nav-lang">
+      <button class="lang-btn active" data-lang="lv">LV</button>
+      <span class="lang-sep">/</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
 
-    <section id="about">
-      <h2>Par mani</h2>
-      <p>Šeit var pievienot informāciju par sevi.</p>
-    </section>
+  <main class="panels-container">
 
-    <section id="projects">
-      <h2>Projekti</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Projekts 1</h3>
-          <p>Projekta apraksts.</p>
+    <!-- Panel 1: IT biznesa procesa analītiķis -->
+    <section class="panel panel--analyst">
+      <div class="panel__inner">
+        <div class="panel__deco panel__deco--grid"></div>
+        <div class="panel__tag">
+          <span data-lv="analītiķis" data-en="analyst">analītiķis</span>
         </div>
-        <div class="project-card">
-          <h3>Projekts 2</h3>
-          <p>Projekta apraksts.</p>
+        <h2 class="panel__title">
+          <span data-lv="IT biznesa procesa analītiķis" data-en="IT Business Process Analyst">IT biznesa procesa analītiķis</span>
+        </h2>
+        <div class="panel__content">
+          <p class="panel__desc">
+            <span data-lv="Procesu optimizācija, prasību analīze un sistēmu integrācija uzņēmuma mērogā." data-en="Process optimization, requirements analysis and enterprise systems integration.">Procesu optimizācija, prasību analīze un sistēmu integrācija uzņēmuma mērogā.</span>
+          </p>
+          <ul class="panel__skills">
+            <li>BPMN / UML</li>
+            <li>SQL / Jira / Confluence</li>
+            <li>Agile / Scrum</li>
+          </ul>
+          <a class="panel__cta" href="#">
+            <span data-lv="Skatīt darbus →" data-en="View work →">Skatīt darbus →</span>
+          </a>
         </div>
+        <div class="panel__bg-text">PROC</div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Kontakti</h2>
-      <p>GitHub: <a href="https://github.com/garaisvitolins" target="_blank">garaisvitolins</a></p>
+    <!-- Panel 2: Cēsu stāstu takzinis -->
+    <section class="panel panel--storyteller">
+      <div class="panel__inner">
+        <div class="panel__ornament">❧</div>
+        <div class="panel__tag">
+          <span data-lv="stāstnieks" data-en="storyteller">stāstnieks</span>
+        </div>
+        <h2 class="panel__title">
+          <span data-lv="Cēsu stāstu takzinis" data-en="Cēsis Story Weaver">Cēsu stāstu takzinis</span>
+        </h2>
+        <div class="panel__content">
+          <p class="panel__desc">
+            <span data-lv="Latvijas kultūras stāsti, senu leģendu dzīvināšana un vietu gars." data-en="Latvian cultural stories, breathing life into ancient legends and the spirit of place.">Latvijas kultūras stāsti, senu leģendu dzīvināšana un vietu gars.</span>
+          </p>
+          <ul class="panel__skills">
+            <li><span data-lv="Stāstu veidošana" data-en="Storytelling">Stāstu veidošana</span></li>
+            <li><span data-lv="Kultūras izpēte" data-en="Cultural research">Kultūras izpēte</span></li>
+            <li><span data-lv="Rakstīšana" data-en="Writing">Rakstīšana</span></li>
+          </ul>
+          <a class="panel__cta" href="#">
+            <span data-lv="Lasīt stāstus →" data-en="Read stories →">Lasīt stāstus →</span>
+          </a>
+        </div>
+        <div class="panel__bg-text">STĀSTI</div>
+      </div>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2026 garaisvitolins</p>
-  </footer>
+    <!-- Panel 3: Latvian Routes -->
+    <section class="panel panel--routes">
+      <div class="panel__inner">
+        <div class="panel__coords">57°N / 25°E</div>
+        <div class="panel__tag">
+          <span data-lv="ceļvedis" data-en="guide">ceļvedis</span>
+        </div>
+        <h2 class="panel__title">
+          <span data-lv="Latvian Routes" data-en="Latvian Routes">Latvian Routes</span>
+        </h2>
+        <div class="panel__content">
+          <p class="panel__desc">
+            <span data-lv="Latvijas dabas maršruti, slēptās vietas un ceļojumu pieredze tiem, kas meklē autentisko." data-en="Latvia's nature routes, hidden places and travel experiences for those seeking the authentic.">Latvijas dabas maršruti, slēptās vietas un ceļojumu pieredze tiem, kas meklē autentisko.</span>
+          </p>
+          <ul class="panel__skills">
+            <li><span data-lv="Maršrutu kartēšana" data-en="Route mapping">Maršrutu kartēšana</span></li>
+            <li><span data-lv="Fotogrāfija" data-en="Photography">Fotogrāfija</span></li>
+            <li><span data-lv="Dabas izpēte" data-en="Nature exploration">Dabas izpēte</span></li>
+          </ul>
+          <a class="panel__cta" href="#">
+            <span data-lv="Izpētīt maršrutus →" data-en="Explore routes →">Izpētīt maršrutus →</span>
+          </a>
+        </div>
+        <div class="panel__bg-text">ROUTE</div>
+      </div>
+    </section>
+
+  </main>
 
   <script src="js/main.js"></script>
 </body>
