@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,300;0,400;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
 
     /* ── RESET ── */
@@ -187,6 +188,74 @@
       color: #c8e6c9;
     }
 
+    .btn-trigger { cursor: pointer; }
+
+    /* ── MODAL ── */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-backdrop.open { display: flex; }
+
+    .modal {
+      position: relative;
+      background: #0d2015;
+      border: 1px solid rgba(106, 191, 105, 0.3);
+      padding: 2.5rem 3rem;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #c8e6c9;
+      opacity: 0.45;
+      transition: opacity 0.2s;
+    }
+    .modal-close:hover { opacity: 1; }
+
+    .modal-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(106, 191, 105, 0.55);
+      margin-bottom: 1.8rem;
+    }
+
+    .modal-contacts {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .modal-contacts li a {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: #c8e6c9;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .modal-contacts li a:hover { color: #6abf69; }
+    .modal-contacts li a i { width: 1.2em; text-align: center; color: #6abf69; font-size: 1rem; }
+
   </style>
 </head>
 <body>
@@ -225,15 +294,29 @@
     </div>
 
     <section class="links-section">
-      <a class="btn" href="mailto:vi@vivasolutions.lv">
+      <button class="btn btn-trigger" onclick="openModal()">
         <span data-lv="Sazināties →" data-en="Get in touch →">Sazināties →</span>
-      </a>
+      </button>
       <a class="btn" href="https://latvianroutes.com" target="_blank" rel="noopener">
         <span data-lv="Apmeklēt LatvianRoutes →" data-en="Visit LatvianRoutes →">Apmeklēt LatvianRoutes →</span>
       </a>
     </section>
 
   </main>
+
+  <!-- Contact Modal -->
+  <div class="modal-backdrop" id="contactModal" onclick="handleBackdropClick(event)">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()"><i class="fa fa-times"></i></button>
+      <div class="modal-title">Kontakti</div>
+      <ul class="modal-contacts">
+        <li><a href="tel:+37120008768"><i class="fa fa-phone"></i> +371 20008768</a></li>
+        <li><a href="mailto:info@latvianroutes.com"><i class="fa fa-envelope"></i> info@latvianroutes.com</a></li>
+        <li><a href="https://www.instagram.com/latvian_routes/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.facebook.com/latvianroutesapp" target="_blank" rel="noopener"><i class="fab fa-facebook"></i> Facebook</a></li>
+      </ul>
+    </div>
+  </div>
 
   <script>
     const langBtns = document.querySelectorAll('.lang-btn');
@@ -252,6 +335,11 @@
         document.documentElement.lang = lang;
       });
     });
+
+    function openModal() { document.getElementById('contactModal').classList.add('open'); }
+    function closeModal() { document.getElementById('contactModal').classList.remove('open'); }
+    function handleBackdropClick(e) { if (e.target === e.currentTarget) closeModal(); }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 
 </body>
