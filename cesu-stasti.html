@@ -177,7 +177,7 @@
 
     /* Vertical photos */
     .photo:nth-child(2) img,
-    .photo:nth-child(5) img {
+    .photo:nth-child(4) img {
       width: 195px;
       height: 342px;
     }
@@ -187,6 +187,7 @@
     }
 
     /* Individual sizing and rotation */
+    /* 1: panorama — horizontal, back layer */
     .photo:nth-child(1) {
       width: 370px;
       height: 223px;
@@ -194,37 +195,43 @@
       z-index: 2;
     }
 
+    /* 2: vanadzins — vertical, overlaps panorama, hidden behind Rigas_iela */
     .photo:nth-child(2) {
       width: 223px;
       height: 370px;
-      transform: rotate(1.8deg) translate(-5px, 0px);
+      transform: rotate(2.2deg) translate(5px, -8px);
       z-index: 3;
-      margin-left: -20px;
+      margin-left: -65px;
+      margin-top: 5px;
     }
 
+    /* 3: Rigas_iela — horizontal, front layer, slightly hides vanadzins */
     .photo:nth-child(3) {
       width: 370px;
       height: 223px;
-      transform: rotate(-1.2deg) translate(0px, -20px);
+      transform: rotate(-1.2deg) translate(0px, 20px);
       z-index: 4;
-      margin-left: -25px;
+      margin-left: -75px;
+      margin-top: 15px;
     }
 
+    /* 4: berzaine — vertical, new row */
     .photo:nth-child(4) {
-      width: 370px;
-      height: 223px;
-      transform: rotate(2.8deg) translate(-15px, 25px);
-      z-index: 2;
-      margin-left: 10px;
-      margin-top: -50px;
-    }
-
-    .photo:nth-child(5) {
       width: 223px;
       height: 370px;
-      transform: rotate(-0.8deg) translate(10px, 10px);
+      transform: rotate(-2deg) translate(-10px, 0px);
+      z-index: 2;
+      margin-left: 30px;
+      margin-top: -90px;
+    }
+
+    /* 5: rozu — horizontal */
+    .photo:nth-child(5) {
+      width: 370px;
+      height: 223px;
+      transform: rotate(1.5deg) translate(8px, 15px);
       z-index: 3;
-      margin-left: -30px;
+      margin-left: -40px;
       margin-top: -30px;
     }
 
@@ -380,16 +387,16 @@
         <img src="assets/images/cesu/Cesis_panorama.jpeg" alt="Cēsis panorāma">
       </div>
       <div class="photo photo-frame">
-        <img src="assets/images/cesu/Cesis_berzaine.jpeg" alt="Cēsis bērzaine">
+        <img src="assets/images/cesu/Cesis_vanadzins.jpeg" alt="Cēsis Vanadziņš">
       </div>
       <div class="photo photo-frame">
         <img src="assets/images/cesu/Cesis_Rigas_iela.jpeg" alt="Cēsis Rīgas iela">
       </div>
       <div class="photo photo-frame">
-        <img src="assets/images/cesu/Cesis_rozu.jpeg" alt="Cēsis rozu dārzs">
+        <img src="assets/images/cesu/Cesis_berzaine.jpeg" alt="Cēsis bērzaine">
       </div>
       <div class="photo photo-frame">
-        <img src="assets/images/cesu/Cesis_vanadzins.jpeg" alt="Cēsis Vanadziņš">
+        <img src="assets/images/cesu/Cesis_rozu.jpeg" alt="Cēsis rozu dārzs">
       </div>
     </section>
 
