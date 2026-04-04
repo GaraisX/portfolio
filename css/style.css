@@ -292,7 +292,7 @@ html, body {
    ============================================ */
 .panel--analyst {
   background-color: var(--analyst-bg);
-  background-image: url('../assets/images/analitic1.jpg');
+  background-image: url('../assets/images/analitic1.jpeg');
   background-size: cover;
   background-position: center;
   color: var(--analyst-text);
@@ -337,7 +337,7 @@ html, body {
    ============================================ */
 .panel--storyteller {
   background-color: var(--story-bg);
-  background-image: url('../assets/images/CesuStasti1.jpg');
+  background-image: url('../assets/images/CesuStasti1.jpeg');
   background-size: cover;
   background-position: center;
   color: var(--story-text);
@@ -394,7 +394,7 @@ html, body {
    ============================================ */
 .panel--routes {
   background-color: var(--routes-bg);
-  background-image: url('../assets/images/LatvianRoutes1.jpg');
+  background-image: url('../assets/images/LatvianRoutes1.jpeg');
   background-size: cover;
   background-position: center;
   color: var(--routes-text);
