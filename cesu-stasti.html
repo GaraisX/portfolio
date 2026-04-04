@@ -126,7 +126,7 @@
     .hero-desc {
       font-family: 'IM Fell English', serif;
       font-style: italic;
-      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      font-size: clamp(1.1rem, 1.76vw, 1.32rem);
       line-height: 1.9;
       color: rgba(244, 237, 224, 0.82);
       letter-spacing: 0.01em;
@@ -223,6 +223,10 @@
       margin-top: -40px;
     }
 
+    .photo-frame {
+      filter: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><filter id='rough'><feTurbulence type='fractalNoise' baseFrequency='0.065' numOctaves='3' stitchTiles='stitch'/><feDisplacementMap in='SourceGraphic' scale='4'/></filter></svg>#rough");
+    }
+
     .photo:hover {
       z-index: 10;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -246,7 +250,7 @@
       display: inline-block;
       font-family: 'IM Fell English', serif;
       font-style: italic;
-      font-size: 1.05rem;
+      font-size: 1.155rem;
       color: #f4ede0;
       text-decoration: none;
       padding: 0.7rem 1.8rem;
@@ -305,19 +309,19 @@
 
     <!-- Photo gallery (placeholders) -->
     <section class="gallery">
-      <div class="photo">
+      <div class="photo photo-frame">
         <div class="photo-placeholder">assets/images/cesu/<br>cesu_01.jpg</div>
       </div>
-      <div class="photo">
+      <div class="photo photo-frame">
         <div class="photo-placeholder">assets/images/cesu/<br>cesu_02.jpg</div>
       </div>
-      <div class="photo">
+      <div class="photo photo-frame">
         <div class="photo-placeholder">assets/images/cesu/<br>cesu_03.jpg</div>
       </div>
-      <div class="photo">
+      <div class="photo photo-frame">
         <div class="photo-placeholder">assets/images/cesu/<br>cesu_04.jpg</div>
       </div>
-      <div class="photo">
+      <div class="photo photo-frame">
         <div class="photo-placeholder">assets/images/cesu/<br>cesu_05.jpg</div>
       </div>
     </section>
