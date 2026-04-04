@@ -41,16 +41,17 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2.5rem;
+  padding: 16px 2.5rem;
   z-index: 100;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.70) 0%, transparent 100%);
+  background: none;
+  border: none;
 }
 
 .nav-name {
   font-family: 'Space Mono', monospace;
   font-size: 26px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.02em;
 }
 
@@ -80,7 +81,7 @@ html, body {
 }
 
 .lang-btn.active {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .lang-btn:hover:not(.active) {
