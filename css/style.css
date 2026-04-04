@@ -249,10 +249,52 @@ html, body {
 
 
 /* ============================================
+   PANEL HEADER (top title, all panels)
+   ============================================ */
+.panel__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 40px;
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.panel__header--analyst {
+  font-family: 'Cormorant SC', serif;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.panel__header--storyteller {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #f4ede0;
+}
+
+.panel__header--routes {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  color: #c8e6c9;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+
+/* ============================================
    PANEL — ANALYST (dark blue / technical)
    ============================================ */
 .panel--analyst {
   background-color: var(--analyst-bg);
+  background-image: url('../assets/images/analitic1.jpg');
+  background-size: cover;
+  background-position: center;
   color: var(--analyst-text);
   font-family: 'Space Mono', monospace;
 }
@@ -261,9 +303,7 @@ html, body {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 25% 75%, rgba(79,195,247,0.07) 0%, transparent 55%),
-    linear-gradient(135deg, rgba(79,195,247,0.04) 0%, transparent 50%);
+  background: rgba(9, 21, 37, 0.65);
   pointer-events: none;
 }
 
@@ -297,6 +337,9 @@ html, body {
    ============================================ */
 .panel--storyteller {
   background-color: var(--story-bg);
+  background-image: url('../assets/images/CesuStasti1.jpg');
+  background-size: cover;
+  background-position: center;
   color: var(--story-text);
   font-family: 'Cormorant Garamond', serif;
 }
@@ -305,9 +348,7 @@ html, body {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 65% 25%, rgba(139,98,32,0.07) 0%, transparent 55%),
-    linear-gradient(180deg, transparent 60%, rgba(220,205,175,0.25) 100%);
+  background: rgba(61, 32, 8, 0.55);
   pointer-events: none;
 }
 
@@ -353,6 +394,9 @@ html, body {
    ============================================ */
 .panel--routes {
   background-color: var(--routes-bg);
+  background-image: url('../assets/images/LatvianRoutes1.jpg');
+  background-size: cover;
+  background-position: center;
   color: var(--routes-text);
   font-family: 'Playfair Display', serif;
 }
@@ -361,9 +405,7 @@ html, body {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 50% 85%, rgba(106,191,105,0.1) 0%, transparent 55%),
-    linear-gradient(180deg, transparent 45%, rgba(5,18,10,0.5) 100%);
+  background: rgba(11, 30, 18, 0.60);
   pointer-events: none;
 }
 
